@@ -36,7 +36,7 @@ class clip_converter(nn.Module):
             self.textual_path = model_quant_textual
 
     def torch_export(self, model, dummy_input, path: str, export_params=DEFAULT_EXPORT):
-        torch.onnx.export(model, dummy_input, path, opset_verision=12, **export_params)
+        torch.onnx.export(model, dummy_input, path, opset_version=12, **export_params)
 
     def onnx_checker(self, path: str):
         model = onnx.load(path)
